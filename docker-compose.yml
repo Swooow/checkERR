@@ -1,0 +1,28 @@
+version: '3.7'
+
+#  MySQL
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: pass
+    ports:
+      - "3306:3306"
+
+# PostgreSQL
+#services:
+#  postgres:
+#    image: postgres:14-alpine
+#    ports:
+#      - '5432:5432'
+#    volumes:
+#      - ./data:/var/lib/postgresql/data
+#    environment:
+#      - POSTGRES_DB=db
+#      - POSTGRES_USER=user
+#      - POSTGRES_PASSWORD=pass
